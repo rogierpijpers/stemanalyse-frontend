@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Step } from './steps/step.component';
 
 @Component({
   selector: 'analysis-wizard',
@@ -7,16 +6,19 @@ import { Step } from './steps/step.component';
   styleUrls: ['./analysis-wizard.component.css']
 })
 export class AnalysisWizard {
-  private title;
-  private recordings;
+  private title: string;
+  private recordings: any;
+  private isCompleted: boolean;
 
-  first_step;
-  second_step;
-  third_step;
-  fourth_step;
-  final_step;
+  private first_step: any;
+  private second_step: any;
+  private third_step: any;
+  private fourth_step: any;
+  private final_step: any;
 
   constructor(){
+    this.isCompleted = false;
+    
     this.title = 'Stemanalyse';
     this.recordings = [];
 
@@ -46,7 +48,7 @@ export class AnalysisWizard {
     }
   }
 
-  onComplete = function(){
+  onComplete(){
     this.isCompleted = true;
     console.log(this.recordings);
   }

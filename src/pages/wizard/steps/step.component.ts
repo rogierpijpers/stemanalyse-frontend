@@ -2,8 +2,7 @@ import { Component, Output, Input, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'step',
-  template: '<h1>{{title}}</h1><hr />{{content}}<audio-recorder [active]="active" (recording)="saveRecording($event)"></audio-recorder>',
-  styles: []
+  templateUrl: './step.component.html' 
 })
 export class Step {
   @Input() active: boolean = true;
