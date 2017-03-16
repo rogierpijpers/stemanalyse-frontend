@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, AfterViewInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, ViewChild, AfterViewInit, Input, Output, EventEmitter } from '@angular/core';
 
 declare var RecordRTC: any;
 
@@ -19,10 +19,16 @@ export class AudioRecorder {
   private audioElement: HTMLAudioElement;
   private isRecording: boolean;
   private isFinishedRecording: boolean; 
+  private isSaved: boolean;
 
   constructor(){
+    this.reset();
+  }
+
+  reset() {
     this.isFinishedRecording = false;
     this.isRecording = false;
+    this.isSaved = false;
   }
 
   ngAfterViewInit(){
@@ -73,6 +79,7 @@ export class AudioRecorder {
   }
 
   save(){
+    this.isSaved = true;
     this.recording.emit(this.blob);
   }
 
