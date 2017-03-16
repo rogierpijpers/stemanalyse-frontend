@@ -4,8 +4,8 @@ declare var RecordRTC: any;
 
 @Component({
   selector: 'audio-recorder',
-  templateUrl: './audio-recorder.component.html',
-  styleUrls: ['./audio-recorder.component.css']
+  templateUrl: 'audio-recorder.component.html',
+  styleUrls: ['audio-recorder.component.css']
 })
 
 export class AudioRecorder {
@@ -50,6 +50,7 @@ export class AudioRecorder {
   }
 
   startRecording(){
+    this.isFinishedRecording = false;
     this.isRecording = true;
     let mediaConstraints = {
       audio: true,

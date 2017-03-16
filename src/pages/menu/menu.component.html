@@ -7,8 +7,8 @@
                     <nav>
                         <ul class="primary-nav">
                             <li><a (click)="toggleMenu()" routerLink="/">Mijn Account</a></li>
-                            <li *ngIf="auth.loggedIn"><a (click)="toggleMenu()" routerLink="/analyse">Doe de stemanalyse</a></li>
-                            <li *ngIf="auth.loggedIn"><a (click)="logout()">Logout</a></li>
+                            <li *ngIf="!auth.loggedIn"><a (click)="toggleMenu()" routerLink="/analyse">Doe de stemanalyse</a></li>
+                            <li *ngIf="!auth.loggedIn"><a (click)="logout()">Logout</a></li>
                             <li *ngIf="!auth.loggedIn"><a (click)="toggleMenu()" class="logged-link">Login</a></li>
                         </ul>
                     </nav>

@@ -2,7 +2,8 @@ import { Component, Output, Input, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'step',
-  templateUrl: './step.component.html' 
+  templateUrl: 'step.component.html',
+  styleUrls: ['step.css'] 
 })
 export class Step {
   @Input() active: boolean = true;

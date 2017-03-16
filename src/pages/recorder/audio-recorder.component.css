@@ -14,7 +14,10 @@ body {
   width: 20%;
   overflow: hidden;
 }
-
+.stop-button {
+        margin-bottom: 23px;
+        background-color: lightgray;
+}
 .button {
   will-change: transform;
   width: 70px;
@@ -99,8 +102,6 @@ body {
           justify-content: center;
   width: 30px;
   height: 30px;
-  margin-bottom: 6vh;
-  background: rgba(0, 0, 0, 0.3);
   border-radius: 50%;
   cursor: pointer;
 }

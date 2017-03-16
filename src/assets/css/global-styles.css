@@ -1,0 +1,45 @@
+/* You can add global styles to this file, and also import other style files */
+[hidden]{
+    display: none !important;
+}
+
+body {
+    background-color: rgb(77,57,75) !important;
+    color: white !important;
+
+}
+
+.card-footer {
+    background-color: rgb(77,57,75) !important;
+}
+
+.card-header {
+    background-color: rgb(38,28,37) !important;
+    color: white !important;
+}
+
+.active {
+    border-bottom-color: white !important;
+}
+
+.enabled {
+    border-bottom-color: lightgray !important;
+}
+
+a {
+    color: white !important;
+}
+
+button {
+    background-color: rgb(38,28,37);
+}
+
+button:hover {
+    background-color: black;
+    color: lightgray;
+}
+
+audio {
+    color: white;
+    background-color: rgb(77,57,75);
+}

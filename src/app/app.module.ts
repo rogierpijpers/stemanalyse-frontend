@@ -12,6 +12,7 @@ import { AnalysisWizard } from '../pages/wizard/analysis-wizard.component'
 import { AudioRecorder } from '../pages/recorder/audio-recorder.component'
 import { Step } from '../pages/wizard/steps/step.component';
 import { PageNotFoundComponent } from '../pages/404/notfound.component';
+import { HomePage } from '../pages/homepage/homepage.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PageNotFoundComponent } from '../pages/404/notfound.component';
     AudioRecorder,
     Step,
     PageNotFoundComponent,
-    Menu
+    Menu,
+    HomePage
   ],
   imports: [
     routing,
