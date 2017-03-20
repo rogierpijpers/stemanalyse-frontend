@@ -3,7 +3,7 @@
   <wizard-step [title]="first_step.title" [showNext]="first_step.finished">
     <h1>{{first_step.title}}</h1>
     <hr />
-    {{first_step.message}}
+    {{first_step.content}}
   </wizard-step>
 
   <wizard-step [title]="second_step.title" [showNext]="second_step.finished">
@@ -38,11 +38,11 @@
     <h1>{{final_step.title}}</h1>
     <hr />
     <div *ngIf="!isCompleted">
-      <h4>Almost done.</h4>
+      <h4>Klik op "Done" om de opnames te versturen.</h4>
     </div>
     <div *ngIf="isCompleted">
-      <h4>Thank you! You have completed all the steps.</h4>
-      <img src="assets/img/dement.gif"/>
+      <h4>Bedankt! de opnames zijn verstuurd.</h4>
+      <!-- <img src="assets/img/dement.gif"/> -->
     </div>
   </wizard-step>
 </form-wizard>

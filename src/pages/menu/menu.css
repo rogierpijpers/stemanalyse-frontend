@@ -6,7 +6,7 @@ html {
 
 .navigation {
     width: 100%;
-    background-color: rgb(38,28,37);
+    background-color: #3385ff;
 }
 
 .logo a:hover, .logo a:focus, .logo a:visited {
