@@ -1,0 +1,42 @@
+.option {
+    text-transform: capitalize;
+    font-size: 35px;
+}
+
+.selected {
+    background-color: lightgreen;
+}
+
+.pick-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.pick-list li {
+    border-bottom: 1px solid #ccc;
+}
+
+.pick-list li:last-child {
+    border: none;
+}
+
+.option {   
+   color: #000;
+
+  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+  transition: font-size 0.3s ease, background-color 0.3s ease;
+  display: block;
+}
+
+.option:hover {
+    font-size: 50px;
+    background: #f6f6f6;
+}
+
+.option.selected:hover {
+    background: lightgreen;
+}

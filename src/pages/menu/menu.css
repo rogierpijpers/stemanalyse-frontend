@@ -6,7 +6,8 @@ html {
 
 .navigation {
     width: 100%;
-    background-color: #3385ff;
+    background: url(../../assets/img/login/form-bg.png) no-repeat 25% -11%;
+    background-size: 140% 81%;
 }
 
 .logo a:hover, .logo a:focus, .logo a:visited {
@@ -65,7 +66,7 @@ Navigation
   width: 35px;
   height: 3px;
   border-radius: 1px;
-  background: #fff;
+  background: #FFC600;
   cursor: pointer; }
 
 .nav-toggle span:before {
@@ -117,25 +118,7 @@ Menu
     padding:0 !important;
     text-transform: none;
   }
-  .menu .down-arrow a {
-    color: #fff; }
-  .menu h1 {
-    color: #fff;
-    margin-bottom: 40px;
-    font-size: 2em;
-    padding: 15px; }
 
-  .url.menu h1{
-    padding: 0;
-  }
-  .menu p.intro {
-    color: #fff;
-    font-size: 20px;
-    font-weight: 300;
-    margin-bottom: 80px; }
-  .url.menu p.intro {
-    margin-bottom: 0;
-  }
   .menu .menu-content {
     padding-top: 32%; }
 
@@ -144,13 +127,6 @@ Menu
           transition: all 300ms ease-in-out;
   width: 100%;
   z-index: 999; }
-
-.fixed {
-  position: fixed;
-  background-color: #a13b4a;
-  z-index: 999;
-  width: 100%;
-  border-bottom: 1px solid white; }
 
 header {
   padding: 50px 0;
@@ -161,9 +137,8 @@ header {
   -webkit-transition: padding 300ms ease-in-out;
           transition: padding 300ms ease-in-out; }
   header a {
-    color: #fff;
-    text-transform: uppercase;
-    font-size: 13px; }
+    color: white;
+    font-size: 20px; }
     header a.login {
       margin-right: 20px; }
   header .logo {
@@ -174,18 +149,18 @@ header {
     header ul.primary-nav li {
       display: inline; }
       header ul.primary-nav li a {
-        color: #fff;
-        padding-right: 25px; }
+        color: white;
+        padding-right: 80px; }
         header ul.primary-nav li a:hover {
-          color: #FF5274; }
+          color: #ffc600; }
       header ul.primary-nav li:last-child a {
         padding-right: 0px; }
   header ul.member-actions li {
     display: inline; }
     header ul.member-actions li a {
-      color: #fff; }
+      color: white; }
       header ul.member-actions li a:hover {
-        color: #FF5274; }
+        color: #ffc600 }
   header .header-nav {
     display: inline-block; }
   header .member-actions {
@@ -195,7 +170,7 @@ header {
     -webkit-transition: all 300ms ease-in-out;
             transition: all 300ms ease-in-out; }
   .logged-link{
-    border: 1px solid white;
+    border: 1px solid #ffc600;
     border-radius: 40px;
     width: 60%;
     padding: 10px 20px !important;

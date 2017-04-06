@@ -1,0 +1,7 @@
+
+<div class="row container" *ngIf="auth.loggedIn">
+    <div class="col-md-4 col-md-offset-4">
+        <h2>Welkom {{auth.currentUser.name}}</h2><span class="warning badge">2</span>
+        <button class="button-dark" type="button" (click)="startTest()">Start stemanalyse</button>
+    </div>
+</div>

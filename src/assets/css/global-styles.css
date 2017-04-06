@@ -14,32 +14,30 @@ body {
 }
 
 .card-header {
-    background-color: #3385ff;
     color: black;
 }
 
-.active {
-    border-bottom-color: white !important;
-}
-
-.enabled {
-    border-bottom-color: lightgray !important;
-}
-
 ul {
-    color: #3385ff !important;
+    color: black !important;
 }
 
 button {
-    background-color: #cccccc;
+    background-color: rgb(51,51,51);
+    color: white !important;
+
+    font-size: 30px !important;
 }
 
 button:hover {
-    background-color: #3385ff;
-    color: lightgray;
+    background-color: rgb(35,35,35);
+    color: #ffc600 !important;
 }
 
 audio {
     color: black;
     background-color: white;
+}
+
+.card {
+    padding: 23px 30px;
 }

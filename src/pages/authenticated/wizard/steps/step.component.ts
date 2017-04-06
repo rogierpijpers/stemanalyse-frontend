@@ -1,11 +1,16 @@
-import { Component, Output, Input, EventEmitter } from '@angular/core';
+import { Component, Output, Input, EventEmitter, HostBinding } from '@angular/core';
+
+import { fadeInOutAnimation } from '../../../../app/animations/fadeInOut.animation';
 
 @Component({
   selector: 'step',
   templateUrl: 'step.component.html',
-  styleUrls: ['step.css'] 
+  styleUrls: ['step.css'],
+  animations: [fadeInOutAnimation]
 })
 export class Step {
+  @HostBinding('@routeAnimation') routeAnimation = true;
+
   @Input() active: boolean = true;
   @Input() title: string;
   @Input() content: string;

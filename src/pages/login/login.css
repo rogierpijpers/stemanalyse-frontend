@@ -1,0 +1,99 @@
+login-page {
+ 	-webkit-background-size: cover;
+ 	-moz-background-size: cover;
+ 	background-size: cover;
+ 	position: relative;
+ 	font-family: 'Open Sans', sans-serif;
+}
+
+
+ #messagebox{
+ 	position: absolute;
+ 	color: lightcoral;
+    font-size: 25px;
+ 	margin-top: 17%;
+ 	margin-left: 5%;
+ 	padding-left: 5%;
+ 	width: 80%;
+ }
+ 
+ .login-form{
+ 	background: url(../../assets/img/login/form-bg.png) no-repeat 100% 0%;
+ 	background-size: 100% 90%;
+ 	width: 66%;
+ 	margin: 10% auto 4% auto;
+ 	position: relative;
+ }
+ 
+ .login-form h1{
+ 	text-align: left;
+ 	color: #ffffff;
+ 	font-size: 1.8em;
+ 	font-weight: 500;
+ 	font-family: 'Open Sans', sans-serif;
+ 	position: absolute;
+ 	top: 7%;
+ 	left: 10%;
+ }
+ 
+  #form{
+  	padding: 32% 8em;
+  }
+  
+  #form li{
+  	border: 1px solid #FFC600;
+  	list-style: none;
+  	margin-bottom: 16px;
+  	width: 100%;
+  	background: #FFC600;
+  }
+  
+  input[type="text"], input[type="password"]{
+  	font-family: 'Open Sans',sans-serif;
+  	width: 60%;
+	height: 10%;
+  	padding: 0.5em 2em 0.5em 1em;
+  	color: white;
+  	font-size: 20px;
+  	outline: none;
+  	background: none;
+  	border: none;
+  }
+
+  input[type="text"]::placeholder, input[type="password"]::placeholder {
+	  color: #777;
+  }
+  
+  input[type="submit"], input[type="button"]{
+  	float: left;
+  	font-size: 18px;
+  	display: inline-block;
+  	font-weight: 600;
+  	color: white;
+  	transition: 0.1s all;
+  	-webkit-transition: 0.1s all;
+  	-moz-transition: 0.1s all;
+  	-o-transition: 0.1s all;
+  	cursor: pointer;
+  	outline: none;
+  	padding: 15px 10px;
+  	margin-top: 3px;
+  	font-family: 'Open Sans', sans-serif;
+  	background: #222;
+  	width: 45%;
+  	border: 1px solid #222;
+  }
+   
+  input[type="submit"]:hover, input[type="button"]:hover{
+    color: #222;
+  	background: #FFC600;
+  	border: 1px solid #FFC600;
+  }
+  
+  .buttons{
+  	margin: 30px 7px;
+  }
+
+  input[type="button"] {
+	  border-left: 1px solid white;
+  }

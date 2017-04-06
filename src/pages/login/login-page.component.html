@@ -1,0 +1,17 @@
+<div class="login-form">
+    <h1>Inloggen</h1>
+
+    <div id="messagebox" *ngIf="showError">
+        {{errorMessage}}
+    </div>
+
+    <div id="form">
+        <li><input type="text" class="text" name="username" placeholder="Gebruikersnaam" [(ngModel)]="username"/></li>
+        <li><input type="password" name="password" placeholder="Wachtwoord" [(ngModel)]="password"/></li>
+        <div class = "buttons">
+            <input type="submit" name="submit" value="Login" (click)="login()"/>
+            <input type="button" name="register" value="Register"/>
+        </div>
+    </div>
+
+</div>

@@ -13,7 +13,9 @@
 			<path d="M12 15c1.66 0 2.99-1.34 2.99-3l.01-6c0-1.66-1.34-3-3-3s-3 1.34-3 3v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1s-5.3-2.1-5.3-5.1h-1.7c0 3.42 2.72 6.23 6 6.72v3.28h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z"/>
 			<path d="M0 0h24v24h-24z" fill="none"/>
 		</svg>
-        Begin opname   
+        <span class="button-text">
+            Begin opname   
+        </span>
     </button>
 
     <!-- Retry button -->
@@ -23,10 +25,12 @@
         (click)="reset()"
         *ngIf="isFinishedRecording && !isRecording && !isSaved"
         [disabled]="!active">
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="512px" height="512px">
+        <svg class="button-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="512px" height="512px">
 		    <path d="M482.195,226.196C482.195,101.471,380.725,0,256.001,0S29.805,101.471,29.805,226.196c0,7.409,6.007,13.416,13.416,13.416    s13.416-6.008,13.416-13.416c0-109.93,89.434-199.363,199.363-199.363s199.363,89.434,199.363,199.363    c0,109.928-89.434,199.362-199.363,199.362h-23.276l33.282-37.255c4.937-5.525,4.458-14.007-1.067-18.944    c-5.525-4.937-14.008-4.457-18.944,1.068l-47.576,53.255c-7.788,8.718-7.788,21.866,0,30.584l47.576,53.255    c2.651,2.968,6.322,4.478,10.01,4.478c3.181,0,6.375-1.126,8.934-3.41c5.526-4.937,6.004-13.419,1.067-18.944l-33.282-37.255    h23.276C380.725,452.39,482.195,350.919,482.195,226.196z" fill="#FFFFFF"/>
         </svg>
-        Opnieuw
+        <span class="button-text">
+            Opnieuw
+        </span>
     </button>
 
     <!-- Stop button -->
@@ -37,11 +41,13 @@
         *ngIf="isRecording && !isFinishedRecording" 
         [disabled]="!active">
         
-        <svg class="stop-button-svg" viewBox="0 0 24 24">
+        <svg class="button-svg" viewBox="0 0 24 24">
 			<path d="M0 0h24v24H0z" fill="none"/>
 			<path d="M6 6h12v12H6z"/>
 		</svg>
-        Stop opname
+        <span class="button-text">
+            Stop opname
+        </span>
     </button>
 
     <!-- Save button -->
@@ -51,14 +57,16 @@
         (click)="save()" 
         *ngIf="isFinishedRecording && !isRecording && !isSaved" 
         [disabled]="!active">
-            <svg viewBox="0 0 49 49">
+            <svg viewBox="0 0 49 49" class="button-svg">
                 <path d="M39.914,0H37.5h-28h-9v49h7h33h8V8.586L39.914,0z M35.5,2v14h-24V2H35.5z M9.5,47V28h29v19H9.5z M46.5,47h-6V26h-33v21h-5   V2h7v16h28V2h1.586L46.5,9.414V47z" fill="#FFFFFF"/>
                 <path d="M13.5,33h7c0.553,0,1-0.447,1-1s-0.447-1-1-1h-7c-0.553,0-1,0.447-1,1S12.947,33,13.5,33z" fill="#FFFFFF"/>
                 <path d="M23.5,35h-10c-0.553,0-1,0.447-1,1s0.447,1,1,1h10c0.553,0,1-0.447,1-1S24.053,35,23.5,35z" fill="#FFFFFF"/>
                 <path d="M25.79,35.29c-0.181,0.189-0.29,0.45-0.29,0.71s0.109,0.52,0.29,0.71C25.979,36.89,26.229,37,26.5,37   c0.26,0,0.52-0.11,0.71-0.29c0.18-0.19,0.29-0.45,0.29-0.71s-0.11-0.521-0.29-0.71C26.84,34.92,26.16,34.92,25.79,35.29z" fill="#FFFFFF"/>
                 <path d="M33.5,4h-6v10h6V4z M31.5,12h-2V6h2V12z" fill="#FFFFFF"/>
             </svg>
-            Opslaan
+            <span class="button-text">
+                Opslaan
+            </span>
     </button>
 
     <!-- Success icon -->

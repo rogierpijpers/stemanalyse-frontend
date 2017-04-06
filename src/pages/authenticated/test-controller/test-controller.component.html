@@ -1,0 +1,24 @@
+
+<div *ngIf="showUnfinishedMessage" id="continueModal">
+    <h1>U heeft een onafgemaakte test!</h1>
+    <p class="lead">Wilt u deze afmaken?</p>
+    <button (click)="createNewTest()" class="button new-test">Nee, Start een nieuwe test</button>
+    <button (click)="continueUnfinishedTest()" class="button continue">Ja, Ga verder</button>
+</div>
+
+<div *ngIf="!showTest && !showUnfinishedMessage" class="card">
+    <h2> Selecteer waar u op wilt testen. (max. 1) </h2>
+    <ul class="pick-list">
+        <li *ngFor="let sickness of allSicknesses">
+            <div (click)="selectSickness(sickness)">
+                <span [class]="sickness == selectedSickness ? 'option selected' : 'option'">
+                    {{sickness.toLowerCase()}}
+                </span>
+            </div>
+        </li>
+    </ul>
+    <button type="button back" routerLink="/">Annuleer</button>
+    <button type="button" (click)="continue()" [disabled]="!selectedSickness">Verder</button>
+</div>
+
+<analysis-wizard *ngIf="showTest && !showUnfinishedMessage"></analysis-wizard>

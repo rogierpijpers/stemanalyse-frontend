@@ -1,14 +1,24 @@
 import { RouterModule, Routes } from '@angular/router';
-import { ModuleWithProviders } from '@angular/core';
+import { NgModule } from '@angular/core';
 
+import { LandingPageComponent } from '../pages/landingpage/landingpage.component';
 import { PageNotFoundComponent } from '../pages/404/notfound.component';
-import { HomePage } from '../pages/homepage/homepage.component';
-import { AnalysisWizard } from '../pages/wizard/analysis-wizard.component';
+import { LoginComponent } from '../pages/login/login.component';
 
 const appRoutes: Routes = [
-  { path: '',  component:  HomePage},
-  { path: 'analyse', component: AnalysisWizard },
+  { path: '',  component:  LandingPageComponent},
+  { path: 'login', component: LoginComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 
-export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);
+
+@NgModule({
+  imports: [
+    RouterModule.forRoot(appRoutes)
+  ],
+  exports: [
+    RouterModule
+  ]
+})
+
+export class AppRoutingModule {}

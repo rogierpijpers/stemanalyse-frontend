@@ -1,0 +1,41 @@
+
+<form-wizard>
+  <wizard-step [title]="explanation_step.title" [showNext]="explanation_step.finished">
+    <h1>{{explanation_step.title}}</h1>
+    <hr />
+    {{explanation_step.content}}
+  </wizard-step>
+
+  <wizard-step title="Grote spraakoefening" *ngIf="main_step" [showNext]="main_step.finished">
+    <step
+      [title]="main_step.title"
+      [content]="main_step.text"
+      (isFinished)="main_step.finished=$event"
+      [content]="main_step.text"
+      (onFinish)="addRecording($event)" *ngIf="main_step">
+    </step>
+  </wizard-step>
+
+  <wizard-step title="Losse oefeningen" *ngIf="sub_steps" [showNext]="subsFinished()">
+    <step *ngFor="let question of sub_steps"
+      [title]="question.title" 
+      [content]="question.text" 
+      (isFinished)="question.finished=$event"
+      [content]="question.text"
+      (onFinish)="addRecording($event)">
+    </step>
+  </wizard-step>
+
+  <wizard-step [title]="final_step.title" (onComplete)="onComplete()">
+    <h1>{{final_step.title}}</h1>
+    <hr />
+    <div *ngIf="!isCompleted">
+      <h3>{{final_step.content}}</h3>
+    </div>
+    <div *ngIf="isCompleted">
+      <h4>Bedankt! de opnames zijn verstuurd.</h4>
+      <!-- <img src="assets/img/dement.gif"/> -->
+    </div>
+  </wizard-step>
+</form-wizard>
+
