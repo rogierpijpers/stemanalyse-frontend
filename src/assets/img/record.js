@@ -43,7 +43,7 @@ var Recorder = exports.Recorder = (function () {
 
         this.config = {
             bufferLen: 4096,
-            numChannels: 1,
+            numChannels: 2,
             mimeType: 'audio/wav'
         };
         this.recording = false;
@@ -54,10 +54,6 @@ var Recorder = exports.Recorder = (function () {
 
         Object.assign(this.config, cfg);
         this.context = source.context;
-		if(this.context.sampleRate != 44101) {
-			alert("Your device has a higher samplerate than 44100. You will not be able to get results on this device.");
-		}
-
         this.node = (this.context.createScriptProcessor || this.context.createJavaScriptNode).call(this.context, this.config.bufferLen, this.config.numChannels, this.config.numChannels);
 
         this.node.onaudioprocess = function (e) {

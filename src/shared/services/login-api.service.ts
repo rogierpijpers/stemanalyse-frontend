@@ -18,7 +18,7 @@ export class LoginApiService extends BaseService {
         let user = new User();
         user.name = 'Username Test';
         user.token = '1234567890';
-        user.unfinished_test = true;
+        user.unfinishedTest = true;
         return Observable.of(user);
     }
 
@@ -33,7 +33,7 @@ export class LoginApiService extends BaseService {
 
     getCurrentUser(): any {
         //stub
-        return this.getUser()//Observable.of(null);//this.getUser();
+        return this.getUser();//Observable.of(null);//this.getUser();
     }
 
     private getAccessTokenHeader(): RequestOptions {

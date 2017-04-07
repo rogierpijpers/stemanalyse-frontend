@@ -17,4 +17,4 @@ trigger('routeAnimation', [
         }),
         animate('0.5s ease')
     ])
-])
+]);

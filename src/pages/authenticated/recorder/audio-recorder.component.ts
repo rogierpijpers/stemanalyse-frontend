@@ -1,6 +1,7 @@
-import { Component, ViewChild, AfterViewInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, ViewChild, Input, Output, EventEmitter, ElementRef } from '@angular/core';
 
-declare var RecordRTC: any;
+declare var Recorder: any;
+declare var AudioContext: any;
 
 @Component({
   selector: 'audio-recorder',
@@ -13,16 +14,23 @@ export class AudioRecorder {
   @Output() recording: EventEmitter<MediaStream> = new EventEmitter<MediaStream>();
   @ViewChild('audio') audio;
 
-  private stream: MediaStream;
-  private recordRTC: any;
-  private blob: any;
   private audioElement: HTMLAudioElement;
   private isRecording: boolean;
   private isFinishedRecording: boolean; 
   private isSaved: boolean;
 
-  constructor(){
+  private audioContext: AudioContext;
+  private recorder: any;
+  private blob: any;
+
+  constructor(public elementRef: ElementRef){
+    this.audioContext = new AudioContext();
     this.reset();
+  }
+
+  startUserMedia(stream: any) {
+    let input = this.audioContext.createMediaStreamSource(stream);
+    this.recorder = new Recorder(input);
   }
 
   reset() {
@@ -34,47 +42,33 @@ export class AudioRecorder {
   ngAfterViewInit(){
     this.audioElement = this.audio.nativeElement;
     this.audioElement.controls = true;
-  }
 
-  successCallback(stream: MediaStream){
-    this.stream = stream;
-    this.recordRTC = RecordRTC(stream, {
-        type: 'audio'
-    });
-    this.recordRTC.startRecording();
-    this.audioElement.muted = false;
-    this.audioElement.autoplay = true;
-    this.audioElement.src = window.URL.createObjectURL(stream);
-  }
-
-  processAudio(audioWebMURL){
-    this.audioElement.src = audioWebMURL;
-    this.blob = this.recordRTC.getBlob();
-    this.recordRTC.getDataURL(dataURL => { 
-      console.log("dataUrl: " + dataURL);
+    navigator.getUserMedia({audio: true}, (stream) => {
+      this.startUserMedia(stream);
+    }, err => {
+      console.log('No live audio input: ' + err);
     });
   }
 
   startRecording(){
     this.isFinishedRecording = false;
     this.isRecording = true;
-    let mediaConstraints = {
-      audio: true,
-      video: false
-    }
-    navigator.mediaDevices.getUserMedia(mediaConstraints)
-    .then(mediaStream => {
-      this.successCallback(mediaStream);
-    }, err => {
-      console.log("Error : "+ err);
-    });
+
+    this.recorder.record();
   }
 
   stopRecording(){
     this.isFinishedRecording = true;
     this.isRecording = false;
-    this.recordRTC.stopRecording(webMURL => {
-      this.processAudio(webMURL);
+
+    this.recorder.stop();
+
+    this.recorder.exportWAV((blob) => {
+      this.blob = blob;
+      var url = URL.createObjectURL(blob);
+      this.audioElement.src = url;
+
+      this.recorder.clear();
     });
   }
 

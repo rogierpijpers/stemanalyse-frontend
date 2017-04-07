@@ -22,7 +22,7 @@ export class QuestionsContainer {
             this.questions = data;
             this.isUnfinishedTest = true;
             this.loading.emit(true);
-        })
+        });
     }
 
     useQuestionSetOf(sickness: string) {
@@ -30,7 +30,7 @@ export class QuestionsContainer {
             this.questions = data;
             this.isUnfinishedTest = false;
             this.loading.emit(true);
-        })
+        });
     }
 
 

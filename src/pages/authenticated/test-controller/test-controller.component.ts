@@ -65,7 +65,7 @@ export class TestControllerComponent implements OnInit {
     getSicknesses() {
         this.analyseService.getSicknesses().subscribe(data => {
             this.allSicknesses = data;
-        })
+        });
     }
 
     continue() {

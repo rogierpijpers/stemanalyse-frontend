@@ -1,5 +1,4 @@
-import { Component, OnInit, Input, HostBinding} from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, HostBinding} from '@angular/core';
 
 import { fadeInOutAnimation } from '../../app/animations/fadeInOut.animation';
 import { Authenticator } from '../../shared/authenticator';

@@ -16,10 +16,15 @@
   <link rel="stylesheet" href="assets/css/app.css">
 </head>
 <body>
-  <app-root>Loading...</app-root>
+  <app-root>
+    <!-- custom loading screen -->
+    <div class="row" style="background-color: black; text-align: center;">
+      <img src="assets/img/loading.jpg" style="width: auto; height: 100%;"/>
+    </div>
+  </app-root>
 
-    <script src="assets/js/vendor/jquery.js"></script>
+    <script src="assets/js/jquery-1.11.2.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/RecordRTC.min.js"></script>
+    <script src="assets/js/recorder.js"></script>
 </body>
 </html>

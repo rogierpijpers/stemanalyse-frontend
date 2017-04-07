@@ -28,7 +28,7 @@ export class BaseService {
             let opts = this.convertToRequestOptions(headers);
             return this.http.post(this.baseUrl + url, data, opts)
             .map(response => {
-                return response.json()
+                return response.json();
             });
         } else {
             return this.http.post(this.baseUrl + url, data).map(response => {

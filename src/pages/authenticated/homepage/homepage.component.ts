@@ -16,8 +16,6 @@ export class HomePage implements OnInit {
     @HostBinding('@routeAnimation') routeAnimation = true;
     @HostBinding('style.display')   display = 'block';
     @HostBinding('style.position')  position = 'absolute';
-    
-    private test_questions;
 
     constructor(public auth: Authenticator, public analyseService: AnalyseService, public questionSet: QuestionsContainer, private router: Router) {
         this.questionSet.loading.subscribe(isComplete => {
